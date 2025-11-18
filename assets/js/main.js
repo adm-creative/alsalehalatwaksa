@@ -30,44 +30,43 @@
         var $firstAnimatingElements = $('.single-slider:first-child').find('[data-animation]');
         doAnimations($firstAnimatingElements);
       });
-      BasicSlider.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
-        var $animatingElements = $('.single-slider[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
-        doAnimations($animatingElements);
-      });
-      BasicSlider.slick({
-        autoplay: false,
-        autoplaySpeed: 4000,
-        dots: false,
-        fade: true,
-        arrows: false, 
-        prevArrow: '<button type="button" class="slick-prev"><img src="img/hero_thumb/arrow-left.png" alt=""><img class="secondary-img" src="img/hero_thumb/left-white.png" alt=""></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="img/hero_thumb/arrow-right.png" alt=""><img class="secondary-img" src="img/hero_thumb/right-white.png" alt=""></button>',
-        responsive: [{
+     BasicSlider.slick({
+    autoplay: true,            // TURNED ON ✔
+    autoplaySpeed: 4000,
+    speed: 800,
+pauseOnHover: false,       // 4 seconds per slide
+    dots: false,
+    fade: true,
+    arrows: false,
+    prevArrow: '<button type="button" class="slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-next"></button>',
+    responsive: [
+        {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
             }
-          },
-          {
+        },
+        {
             breakpoint: 991,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: false
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
             }
-          },
-          {
+        },
+        {
             breakpoint: 767,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: false
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
             }
-          }
-        ]
-      });
+        }
+    ]
+});
 
       function doAnimations(elements) {
         var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
