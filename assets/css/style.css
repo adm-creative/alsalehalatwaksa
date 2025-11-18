@@ -7357,3 +7357,31 @@ del {
         max-height: 70px;
     }
 }
+/* Desktop */
+.hero-title {
+    color: #fff;
+    font-weight: 900;
+    font-size: 65px;
+    line-height: 1.1;
+    white-space: nowrap;
+    margin-bottom: 30px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 45px;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 30px;
+        line-height: 1.2;
+        white-space: normal;
+        text-align: center;
+    }
+}
